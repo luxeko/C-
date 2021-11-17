@@ -1,0 +1,16 @@
+E:\CSharp\Buoi3\bin\Debug\net5.0\Buoi3.exe
+E:\CSharp\Buoi3\bin\Debug\net5.0\Buoi3.deps.json
+E:\CSharp\Buoi3\bin\Debug\net5.0\Buoi3.runtimeconfig.json
+E:\CSharp\Buoi3\bin\Debug\net5.0\Buoi3.runtimeconfig.dev.json
+E:\CSharp\Buoi3\bin\Debug\net5.0\Buoi3.dll
+E:\CSharp\Buoi3\bin\Debug\net5.0\ref\Buoi3.dll
+E:\CSharp\Buoi3\bin\Debug\net5.0\Buoi3.pdb
+E:\CSharp\Buoi3\obj\Debug\net5.0\Buoi3.csproj.AssemblyReference.cache
+E:\CSharp\Buoi3\obj\Debug\net5.0\Buoi3.GeneratedMSBuildEditorConfig.editorconfig
+E:\CSharp\Buoi3\obj\Debug\net5.0\Buoi3.AssemblyInfoInputs.cache
+E:\CSharp\Buoi3\obj\Debug\net5.0\Buoi3.AssemblyInfo.cs
+E:\CSharp\Buoi3\obj\Debug\net5.0\Buoi3.csproj.CoreCompileInputs.cache
+E:\CSharp\Buoi3\obj\Debug\net5.0\Buoi3.dll
+E:\CSharp\Buoi3\obj\Debug\net5.0\ref\Buoi3.dll
+E:\CSharp\Buoi3\obj\Debug\net5.0\Buoi3.pdb
+E:\CSharp\Buoi3\obj\Debug\net5.0\Buoi3.genruntimeconfig.cache

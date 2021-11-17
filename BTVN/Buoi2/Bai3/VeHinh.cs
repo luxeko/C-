@@ -106,36 +106,48 @@ namespace Bai3
                         }
                         break;
                     case 5: 
-                        
+                        while (true)
+                        {
+                            int i,j;
+                            System.Console.WriteLine("Nhập chiều cao hình thang cân: ");
+                            int h = Convert.ToInt32(Console.ReadLine());
+                            System.Console.WriteLine("Nhập độ dài đáy nhỏ: ");
+                            int a = Convert.ToInt32(Console.ReadLine());
+                            if(h > 0 && a > 0){
+                                System.Console.WriteLine("=> Hình thang cân");
+                                for(i = 0; i < h; i++){
+                                    for (j = 0; j < a - i; j++){
+                                        Console.Write("  ");
+                                    }
+                                    for (j = 0; j < a + 2*i; j++){
+                                        Console.Write("* ");
+                                    }
+                                    System.Console.WriteLine();
+                                }
+                                    break;
+                            }else{
+                                System.Console.WriteLine("Chiều cao không hợp lệ!");
+                            }
+                        }
                         break;
                     case 6: 
                         while (true)
                         {
-                            System.Console.WriteLine("Nhập số hàng hình thoi: ");
+                            int i,j;
+                            System.Console.WriteLine("Nhập cạnh hình thoi: ");
                             int h = Convert.ToInt32(Console.ReadLine());
-                            int m = h/2;
-                            int n = h/2;
                             if(h > 0){
                                 System.Console.WriteLine("=> Hình thoi: ");
-                                for(int i = 1; i <= m; i++){
-                                    for(int j = 1; j <= m-i; j++){
-                                        Console.Write("  ");
+                                for(i = 0; i < h; i++){
+                                    for (j = 0; j < h - i; j++){
+                                        Console.Write(" ");
                                     }
-                                    for(int k = 1; k <= 2*i-1; k++){
+                                    for (j = 0; j < h ; j++){
                                         Console.Write("* ");
                                     }
                                     System.Console.WriteLine();
                                 }
-                                for(int i = n; i >= 1; i--){
-                                    for(int j = n; j > i; j--){
-                                        Console.Write("  ");
-                                    }
-                                    for(int k = 1; k <= 2*i-1; k++){
-                                        Console.Write("* ");
-                                    }
-                                    System.Console.WriteLine();
-                                }
-                                break;
+                                    break;
                             }else{
                                 System.Console.WriteLine("Chiều cao không hợp lệ!");
                             }
