@@ -9,9 +9,9 @@ using System.Globalization;
     Sau khi trả về kết quả, hỏi ng dùng tiếp tục muốn thực hiện tiếp hay không? ( y: tiếp tục ).
 */
 namespace bai3
-{
-    class Bai3
-    {
+{    class Bai3
+
+    {        
         static void Main(string[] args)
         {
             String name;
@@ -22,14 +22,21 @@ namespace bai3
             Console.WriteLine("Nhap ngay sinh (dd/MM/yyyy): ");
             mBirthday = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
+            DateTime birthDayInY = new DateTime(now.Year, mBirthday.Month, mBirthday.Day);
 
-            if(mBirthday.Month >= now.Month){
-                
-                int ngaySinh = 
-                Console.WriteLine("Con {0} la den sinh nhat cua nhan vien {1}", diff2, name);
+            TimeSpan diff = birthDayInY.Subtract(now);
+            if(diff.Days < 0){
+                birthDayInY = new DateTime(now.Year + 1, mBirthday.Month, mBirthday.Day);
+                diff = birthDayInY.Subtract(now);
 
-                 Console.Read();
+                System.Console.WriteLine("{0}",diff.Days);
+            }else if(diff.Days == 0){
+                System.Console.WriteLine("HBPD");
+            }else{
+                diff = birthDayInY.Subtract(now);
+                System.Console.WriteLine("{0}",diff.Days);
             }
         }
+
     }
 }

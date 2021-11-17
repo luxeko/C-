@@ -34,11 +34,7 @@ namespace Bai2
                     Console.WriteLine("Chao mung den voi dich vu ATM");
                     do
                     {
-                        Console.WriteLine("1. Kiem tra tai khoan");
-                        Console.WriteLine("2. Rut tien");
-                        Console.WriteLine("3. Nap tien");
-                        Console.WriteLine("4. Thoat!");
-                        Console.WriteLine("Chon: ");
+                        showMenu();
                         choose = Convert.ToInt32(Console.ReadLine());
                         switch (choose)
                         {
@@ -69,6 +65,7 @@ namespace Bai2
                                     if(tienGoc > 10000 && (tienGoc - tienRut) > 10000 ){
                                         tienGoc -= tienRut;
                                         tienGoc -= 1100;
+                                        Console.WriteLine("Rut thanh cong");
                                         Console.WriteLine(String.Format(CultureInfo.InvariantCulture, "So tien trong tai khoan: {0:#,##0}", tienGoc));
                                     }
                                     else{
@@ -81,6 +78,7 @@ namespace Bai2
                                 int tienNap = Convert.ToInt32(Console.ReadLine());
                                 if(tienNap > 0){
                                     tienGoc += tienNap;
+                                    Console.WriteLine("Nap thanh cong");
                                     Console.WriteLine(String.Format(CultureInfo.InvariantCulture, "So tien trong tai khoan: {0:#,##0}", tienGoc));
                                 }else{
                                     Console.WriteLine("So tien nap khong hop le!");
@@ -98,7 +96,7 @@ namespace Bai2
                     } while (flag == true);
                 }else{
                     soLanNhapPin++;
-                    if(soLanNhapPin < 4){
+                    if(soLanNhapPin < 3){
                         Console.WriteLine("Sai ma pin! vui long nhap lai");
                         
                     }else if(soLanNhapPin == 4){
@@ -107,6 +105,13 @@ namespace Bai2
                     
                 }
             } while (soLanNhapPin <= 3);
+        }
+        public static void showMenu(){
+            Console.WriteLine("1. Kiem tra tai khoan");
+            Console.WriteLine("2. Rut tien");
+            Console.WriteLine("3. Nap tien");
+            Console.WriteLine("4. Thoat!");
+            Console.WriteLine("Chon: ");
         }
     }
 }

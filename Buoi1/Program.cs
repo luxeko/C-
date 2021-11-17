@@ -45,7 +45,7 @@ namespace Buoi1
             DateTime now = DateTime.Now;
             Console.WriteLine("Hien tai: {0}", now);
             String snow = String.Format("{0:dd/MM/yyyy HH:mm}", now);
-            Console.WriteLine("Hien tao {0}", snow);
+            Console.WriteLine("Hien tai {0}", snow);
 
             //Chuyen chuoi -> datetime
             System.Console.WriteLine("Nhap 1 ngay (dd/MM/yyyy): ");

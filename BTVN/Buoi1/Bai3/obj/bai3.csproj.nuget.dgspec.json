@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CSharp\\BTVN\\Buoi1\\bai3\\bai3.csproj": {}
+    "E:\\CSharp\\BTVN\\Buoi1\\Bai3\\bai3.csproj": {}
   },
   "projects": {
-    "E:\\CSharp\\BTVN\\Buoi1\\bai3\\bai3.csproj": {
+    "E:\\CSharp\\BTVN\\Buoi1\\Bai3\\bai3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CSharp\\BTVN\\Buoi1\\bai3\\bai3.csproj",
+        "projectUniqueName": "E:\\CSharp\\BTVN\\Buoi1\\Bai3\\bai3.csproj",
         "projectName": "bai3",
-        "projectPath": "E:\\CSharp\\BTVN\\Buoi1\\bai3\\bai3.csproj",
+        "projectPath": "E:\\CSharp\\BTVN\\Buoi1\\Bai3\\bai3.csproj",
         "packagesPath": "C:\\Users\\Duc Anh\\.nuget\\packages\\",
-        "outputPath": "E:\\CSharp\\BTVN\\Buoi1\\bai3\\obj\\",
+        "outputPath": "E:\\CSharp\\BTVN\\Buoi1\\Bai3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Duc Anh\\AppData\\Roaming\\NuGet\\NuGet.Config"
