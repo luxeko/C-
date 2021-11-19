@@ -7,8 +7,9 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Bai3
-<<<<<<< HEAD
 build_property.ProjectDir = e:\CSharp\BTVN\Buoi2\Bai3\
-=======
+
 build_property.ProjectDir = d:\CSharp\BTVN\Buoi2\Bai3\
->>>>>>> 31643bce9c8fe3cd2723713e5447d725d1e1fee1
+
+build_property.ProjectDir = d:\CSharp\BTVN\Buoi2\Bai3\
+
