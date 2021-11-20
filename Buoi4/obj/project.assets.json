@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CSharp\\Buoi4\\Buoi4.csproj",
+      "projectUniqueName": "E:\\CSharp\\Buoi4\\Buoi4.csproj",
       "projectName": "Buoi4",
-      "projectPath": "D:\\CSharp\\Buoi4\\Buoi4.csproj",
+      "projectPath": "E:\\CSharp\\Buoi4\\Buoi4.csproj",
       "packagesPath": "C:\\Users\\Duc Anh\\.nuget\\packages\\",
-      "outputPath": "D:\\CSharp\\Buoi4\\obj\\",
+      "outputPath": "E:\\CSharp\\Buoi4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Duc Anh\\AppData\\Roaming\\NuGet\\NuGet.Config"

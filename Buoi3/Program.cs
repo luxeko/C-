@@ -9,14 +9,46 @@ namespace Buoi3
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine("---- Mảng 1 chiều ----");
             // Mảng 1 chiều: các phần tử cùng kiểu được lưu trữ trên cùng 1 hàng.
-            mang1Chieu();
+            // mang1Chieu();
 
             // Mảng đa chiều:
             // 1. Mảng hình chữ nhật - rectangur: kích thước của mỗi chiều là cố định, số chiều = số dấu, trong [] + 1
-            MangRectangur();
+            // MangRectangur();
+
+            // 2. Mảng răng cưa - jagged: 1 mảng chứa các mảng khác, cố định số hàng trong mảng, số cột sẽ linh động 
+            MangJagged();
             Console.Read();
 
         }
+
+        static void MangJagged()
+        {
+            String[][] dsHvNam2021 = new String[4][];
+            // lop t2101e
+            dsHvNam2021[0] = new string[10];
+            // lop t2102e
+            dsHvNam2021[1] = new string[15];
+            // lop t2103e
+            dsHvNam2021[2] = new string[]{"DucAnh", "MaiTrang", "HongThai"};
+            // lop t2101e
+            dsHvNam2021[3] = new string[14];
+            for(int i = 0; i < dsHvNam2021.GetLength(0); i++)
+            {
+                String[] itemJagged = dsHvNam2021[i];
+                for(int j = 0; i < itemJagged.GetLength(0); j++)
+                {
+                    System.Console.Write((itemJagged[j]==null?"N/A":itemJagged[j]) + "\t");
+                }
+                System.Console.WriteLine();
+            }
+            int [][] mang2chieuJagged = new int[4][];
+            mang2chieuJagged [0] = new int[3];
+            mang2chieuJagged [1] = new int[3];
+            mang2chieuJagged [2] = new int[3];
+            mang2chieuJagged [3] = new int[3];
+
+        }
+
         static void MangRectangur()
         {
             // Khai báo và khởi tạo kích thước mảng 2 chiều hình chữ nhật
