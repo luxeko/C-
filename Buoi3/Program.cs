@@ -35,7 +35,7 @@ namespace Buoi3
             for(int i = 0; i < dsHvNam2021.GetLength(0); i++)
             {
                 String[] itemJagged = dsHvNam2021[i];
-                for(int j = 0; i < itemJagged.GetLength(0); j++)
+                for(int j = 0; j < itemJagged.GetLength(0); j++)
                 {
                     System.Console.Write((itemJagged[j]==null?"N/A":itemJagged[j]) + "\t");
                 }

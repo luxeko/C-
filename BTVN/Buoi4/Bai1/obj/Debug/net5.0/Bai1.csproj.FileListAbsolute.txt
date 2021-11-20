@@ -1,0 +1,16 @@
+E:\CSharp\BTVN\Buoi4\Bai1\obj\Debug\net5.0\Bai1.csproj.AssemblyReference.cache
+E:\CSharp\BTVN\Buoi4\Bai1\obj\Debug\net5.0\Bai1.GeneratedMSBuildEditorConfig.editorconfig
+E:\CSharp\BTVN\Buoi4\Bai1\obj\Debug\net5.0\Bai1.AssemblyInfoInputs.cache
+E:\CSharp\BTVN\Buoi4\Bai1\obj\Debug\net5.0\Bai1.AssemblyInfo.cs
+E:\CSharp\BTVN\Buoi4\Bai1\obj\Debug\net5.0\Bai1.csproj.CoreCompileInputs.cache
+E:\CSharp\BTVN\Buoi4\Bai1\bin\Debug\net5.0\Bai1.exe
+E:\CSharp\BTVN\Buoi4\Bai1\bin\Debug\net5.0\Bai1.deps.json
+E:\CSharp\BTVN\Buoi4\Bai1\bin\Debug\net5.0\Bai1.runtimeconfig.json
+E:\CSharp\BTVN\Buoi4\Bai1\bin\Debug\net5.0\Bai1.runtimeconfig.dev.json
+E:\CSharp\BTVN\Buoi4\Bai1\bin\Debug\net5.0\Bai1.dll
+E:\CSharp\BTVN\Buoi4\Bai1\bin\Debug\net5.0\ref\Bai1.dll
+E:\CSharp\BTVN\Buoi4\Bai1\bin\Debug\net5.0\Bai1.pdb
+E:\CSharp\BTVN\Buoi4\Bai1\obj\Debug\net5.0\Bai1.dll
+E:\CSharp\BTVN\Buoi4\Bai1\obj\Debug\net5.0\ref\Bai1.dll
+E:\CSharp\BTVN\Buoi4\Bai1\obj\Debug\net5.0\Bai1.pdb
+E:\CSharp\BTVN\Buoi4\Bai1\obj\Debug\net5.0\Bai1.genruntimeconfig.cache
