@@ -1,5 +1,5 @@
 using System;
-using System.Globalization;
+
 namespace Bai2
 {
     public class bookHouse
@@ -23,12 +23,12 @@ namespace Bai2
 
         public bookHouse()
         {
-            listBook = new Book[10][];
+            listBook = new Book[20][];
             // Khởi tạo các mảng 1 chiều trong listBook
             for(int i = 0; i < listBook.GetLength(0); i++)
             {
                 Random rand = new Random();
-                int shekfSize = rand.Next(1,10);
+                int shekfSize = rand.Next(0,10);
                 listBook[i] = new Book[shekfSize];
             }
         }
@@ -41,7 +41,6 @@ namespace Bai2
         public void addBook()
         {
             String confirm = "";
-            
             do
             {
                 int keSach = 0;
@@ -52,7 +51,7 @@ namespace Bai2
                     // thêm các quyển sách vào trong listBook theo kệ sách 
                     System.Console.WriteLine("Nhập kệ sách: ");
                     keSach = Convert.ToInt32(Console.ReadLine());
-                    if(keSach >= 0 && keSach < 50){
+                    if(keSach >= 0 && keSach < 20){
                         break;
                     }
                     else
@@ -91,10 +90,9 @@ namespace Bai2
                 {
                     if(listBook[i][j] != null)
                     {
-                        System.Console.WriteLine(listBook[i][j].output());
+                        System.Console.WriteLine("{0,-3}+ {1}", " ",listBook[i][j].output());
                     }
                     
-                    // System.Console.WriteLine("{0,-3}+ {1}", " ",str);
                 }
             }
         }
