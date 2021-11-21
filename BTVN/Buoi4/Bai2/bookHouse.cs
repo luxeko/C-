@@ -5,61 +5,73 @@ namespace Bai2
     public class bookHouse
     {
         private Book[][] listBook;
-        private String nameHouse;
+        private int count = 0;
+
+        public Book[][] getListBook() {
+            return this.listBook;
+        }
+        public void setListBook(Book[][] listBook) {
+            this.listBook = listBook;
+        }
+        public int getCount() {
+            return this.count;
+        }
+        public void setCount(int count) {
+            this.count = count;
+        }
+
 
         public bookHouse()
         {
-            listBook = new Book[50][];
+            listBook = new Book[10][];
             // Khởi tạo các mảng 1 chiều trong listBook
             for(int i = 0; i < listBook.GetLength(0); i++)
             {
                 Random rand = new Random();
-                int shekfSize = rand.Next(10,20);
+                int shekfSize = rand.Next(1,10);
                 listBook[i] = new Book[shekfSize];
             }
         }
-
-        public bookHouse(Book[][] listBook, string nameHouse)
+        public bookHouse(Book[][] listBook, int count)
         {
             this.listBook = listBook;
-            this.nameHouse = nameHouse;
+            this.count = count;
         }
-
-        public string NameHouse { get => nameHouse; set => nameHouse = value; }
-        internal Book[][] ListBook { get => listBook; set => listBook = value; }
 
         public void addBook()
         {
-            Book b = new Book();
-            // hỏi người dùng lựa chọn kệ sạch 0 - 49
-            // thêm các quyển sách vào trong listBook theo kệ sách
-            while (true)
+            String confirm = "";
+            
+            do
             {
-                System.Console.WriteLine("Nhập kệ sách: ");
-                int n = Convert.ToInt32(Console.ReadLine());
-                if (n >= 0 && n <= 49)
+                int keSach = 0;
+                int viTri = 0;
+                while (true)
                 {
-                    for(int i = 0; i < listBook.GetLength(0); i++)
-                    {
-                        if(listBook[n] == listBook[i])
-                        {
-                            // b.input();
-                            
-                            b.input();
-                            // listBook[n] = new Book[]{b.input()};
-                            
-                        }
+                    // hỏi người dùng lựa chọn kệ sạch 0 - 49
+                    // thêm các quyển sách vào trong listBook theo kệ sách 
+                    System.Console.WriteLine("Nhập kệ sách: ");
+                    keSach = Convert.ToInt32(Console.ReadLine());
+                    if(keSach >= 0 && keSach < 50){
+                        break;
                     }
-                    break;
-                }else System.Console.WriteLine("Kệ sách không tồn tại");
-            }
-           
-        
+                    else
+                    {
+                        System.Console.WriteLine("Kệ sách không hợp lệ!");
+                    }
+                }
+                System.Console.WriteLine("Nhập vi tri: ");
+                viTri = Convert.ToInt32(Console.ReadLine());
+                
+                listBook[keSach][viTri] = new Book();
+                listBook[keSach][viTri].input();
+                System.Console.WriteLine("Bạn có muốn tiếp tục? (Bấm n: thoát!)");
+                confirm = Console.ReadLine();
+            } while (!confirm.Equals("n"));
         }
+        
         public void showAllBook()
         {
-            Book b = new Book();
-            string str ;
             // hiển thị các sách theo kệ
             /*
                 - kệ 1: 
@@ -77,8 +89,12 @@ namespace Bai2
                 Book[] itemBook = listBook[i];
                 for(int j = 0; j < itemBook.GetLength(0); j++)
                 {
-                    b.output(out str);
-                    System.Console.WriteLine("{0,-3}+ {1}", " ",str);
+                    if(listBook[i][j] != null)
+                    {
+                        System.Console.WriteLine(listBook[i][j].output());
+                    }
+                    
+                    // System.Console.WriteLine("{0,-3}+ {1}", " ",str);
                 }
             }
         }
