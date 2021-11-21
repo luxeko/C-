@@ -89,11 +89,17 @@ namespace Bai1
             int sum = 0;
             int quantity;
             // So luong lop hoc
-            for(quantity = 1; quantity < this.count; quantity++)
+            for(quantity = 0; quantity < this.count; quantity++)
             {
                 quantity++;
             }
             // Số lượng học viên của các lớp
+            for(int i = 0; i < this.count; i++)
+            {
+                sum += this.quanLyLopHoc[i].getStudents();
+            }
+            System.Console.WriteLine("Tổng số lớp học: {0}", quantity);
+            System.Console.WriteLine("Tổng số học sinh: {0}", sum);
         }
 
     }

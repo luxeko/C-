@@ -19,15 +19,21 @@ namespace Bai1
                     case 1:
                         
                         cd.addClass();
-                        cd.showAllList();
+                        
                         break;
                     case 2:
+                        cd.showAllList();
                         break;
                     case 3:
                         break;
                     case 4:
+                        cd.sortListById();
+                        System.Console.WriteLine("Thành công");
+                        System.Console.WriteLine("Danh sách lớp học sau khi sắp xếp");
+                        cd.showAllList();
                         break;
                     case 5:
+                        cd.sumStudentsAndClasses();
                         break;
                     case 6:
                         break;
