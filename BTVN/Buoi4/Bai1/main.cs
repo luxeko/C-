@@ -17,14 +17,30 @@ namespace Bai1
                 switch (choose)
                 {
                     case 1:
-                        
                         cd.addClass();
-                        
                         break;
                     case 2:
                         cd.showAllList();
                         break;
                     case 3:
+                        String confirm ="";
+                        do
+                        {
+                            System.Console.WriteLine("Nhập mã lớp: ");
+                            String idFind = Console.ReadLine();
+                            lopHoc idCLass = cd.searchClassByID(idFind);
+                            if(idCLass != null)
+                            {
+                                System.Console.WriteLine(idCLass.output());
+                            } 
+                            else
+                            {
+                                System.Console.WriteLine("Không tìm thấy lớp có ID: {0}", idFind);
+                            }
+                            System.Console.WriteLine("Bạn có muốn tiếp tục ko? (bấm n: thoát!)");
+                            confirm = Console.ReadLine();
+                        } while (!confirm.Equals("n"));
+                        
                         break;
                     case 4:
                         cd.sortListById();
@@ -36,8 +52,11 @@ namespace Bai1
                         cd.sumStudentsAndClasses();
                         break;
                     case 6:
+                        cd.minMax();
                         break;
                     case 7:
+                        cd.sortHocVien();
+                        cd.showAllList();
                         break;
                     case 8:
                         System.Console.WriteLine("Thoát!");
@@ -59,7 +78,7 @@ namespace Bai1
             System.Console.WriteLine("4. Sắp xếp ds lớp học giảm dần theo tên");
             System.Console.WriteLine("5. Tính số lượng lớp học và số lượng học sinh");
             System.Console.WriteLine("6. Tìm số lớp học có số lượng học sinh nhỏ nhất và lớn nhất");
-            System.Console.WriteLine("7. Sắo xếp lớp học tăng dần theo số lượng học sinh");
+            System.Console.WriteLine("7. Sắp xếp lớp học tăng dần theo số lượng học sinh");
             System.Console.WriteLine("8. Thoát");
             System.Console.WriteLine("Chọn: ");
         }

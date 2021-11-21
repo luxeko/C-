@@ -3,38 +3,45 @@ namespace Bai1
 {
     public class ClassDao
     {
-        lopHoc[] quanLyLopHoc = new lopHoc[20];
+        // -------- Field ----------
+        lopHoc[] quanLyLopHoc;
         private int count = 0;
 
+        // --------- Constructor --------
         public int getCount() {
             return this.count;
         }
-
         public void setCount(int count) {
             this.count = count;
         }
-
         public lopHoc[] getQuanLyLopHoc() {
             return this.quanLyLopHoc;
         }
-
         public void setQuanLyLopHoc(lopHoc[] quanLyLopHoc) {
             this.quanLyLopHoc = quanLyLopHoc;
         }
         public ClassDao()
         {
-            // quanLyLopHoc = new lopHoc[20];
-            
+            quanLyLopHoc = new lopHoc[20];
         }
         public ClassDao(lopHoc[] quanLyLopHoc, int count)
         {
             this.quanLyLopHoc = quanLyLopHoc;
             this.count = count;
         }
+
+        // --------- METHOD -----------
         public void addClass(){
-            lopHoc lh = new lopHoc();
-            lh.input();
-            this.quanLyLopHoc[this.count++] = lh;
+            String confirm = "";
+            do
+            {
+                lopHoc lh = new lopHoc();
+                lh.input();
+                this.quanLyLopHoc[this.count++] = lh;
+                System.Console.WriteLine("Bạn có muốn tiếp tục ko? (bấm n: thoát!)");
+                confirm = Console.ReadLine();
+            } while (!confirm.Equals("n"));
+            
         }
         public void showAllList()
         {
@@ -47,10 +54,9 @@ namespace Bai1
         }
 
         //nhap 1 ma lop roi tra ve lop hoc co malop = malop nhap
-        public lopHoc searchClassByID()
+        public lopHoc searchClassByID(String idFind)
         {
-            System.Console.WriteLine("Nhập mã lớp: ");
-            String idFind = Console.ReadLine();
+            
             for(int i = 0; i < this.count; i++)
             {
                 lopHoc lh = this.quanLyLopHoc[i];
@@ -87,9 +93,9 @@ namespace Bai1
         public void sumStudentsAndClasses()
         {
             int sum = 0;
-            int quantity;
+            int quantity = 0;
             // So luong lop hoc
-            for(quantity = 0; quantity < this.count; quantity++)
+            for(int i = 0; i < this.count; i++)
             {
                 quantity++;
             }
@@ -100,6 +106,49 @@ namespace Bai1
             }
             System.Console.WriteLine("Tổng số lớp học: {0}", quantity);
             System.Console.WriteLine("Tổng số học sinh: {0}", sum);
+        }
+
+        // lớp có số lượng học viên nhỏ nhất và lớn nhất
+        public void minMax()
+        {
+            int min = this.quanLyLopHoc[0].getStudents();
+            int max = this.quanLyLopHoc[0].getStudents();
+            String posMin = this.quanLyLopHoc[0].getClassID();
+            String posMax = this.quanLyLopHoc[0].getClassID();
+            for(int i = 0; i < this.count; i++)
+            {
+                if(min > this.quanLyLopHoc[i].getStudents())
+                {
+                    min = this.quanLyLopHoc[i].getStudents();
+                    posMin = this.quanLyLopHoc[i].getClassID();
+                }
+                if(max < this.quanLyLopHoc[i].getStudents())
+                {
+                    max = this.quanLyLopHoc[i].getStudents();
+                    posMax = this.quanLyLopHoc[i].getClassID();
+                }
+            }
+            System.Console.WriteLine("Lớp {0} có số lượng học viên nhỏ nhất là : {1}", posMin, min);
+            System.Console.WriteLine("Lớp {0} có số lượng học viên lớn nhất là : {1}", posMax, max);
+        }
+
+        // Sắp xếp ds lớp tăng dần theo số học viên
+        public void sortHocVien()
+        {
+            lopHoc temp2;
+            for(int i = 0; i < this.count; i++)
+            {
+                for(int j = i+1; j < this.count; j++)
+                // sắp xếp số lượng học viên tăng dần
+                {
+                    if(this.quanLyLopHoc[i].getStudents() > this.quanLyLopHoc[j].getStudents())
+                    {
+                        temp2 = this.quanLyLopHoc[i];
+                        this.quanLyLopHoc[i] = this.quanLyLopHoc[j];
+                        this.quanLyLopHoc[j] = temp2;
+                    }
+                }
+            }
         }
 
     }
