@@ -47,48 +47,49 @@ namespace Bai1
 
         public void input()
         {
-            ClassDao cd = new ClassDao();
-            while (true)
-            {
-                int count = 0;
-                System.Console.WriteLine("Nhập mã lớp học: ");
-                this.classID = Console.ReadLine();
-                if(this.classID.Trim().Equals(""))
-                {
-                    System.Console.WriteLine("Bạn chưa nhập ID lớp");
-                }
-                else
-                {
-                    foreach(lopHoc lH in cd.getQuanLyLopHoc())
-                    {
-                        if(this.classID.Equals(lH.getClassID()))
-                        {
-                            System.Console.WriteLine("Mã lớp học đã tồn tại!");
-                            count++;
-                        }
-                    }
-                    if(count == 0) break;
-                }
+            // ClassDao cd = new ClassDao();
+            // while (true)
+            // {
+            //     int count = 0;
+            //     System.Console.WriteLine("Nhập mã lớp học: ");
+            //     this.classID = Console.ReadLine();
+            //     if(this.classID.Trim().Equals(""))
+            //     {
+            //         System.Console.WriteLine("Bạn chưa nhập ID lớp");
+            //     }
+            //     else
+            //     {
+            //         for(int i = 0; i < cd.getQuanLyLopHoc().GetLength(0); i++)
+            //         {
+            //             lopHoc checkID = cd.getQuanLyLopHoc()[i];
+            //             if(this.classID.Equals(checkID.getClassID()))
+            //             {
+            //                 System.Console.WriteLine("Mã lớp học đã tồn tại!");
+            //                 count++;
+            //             }
+            //         }
+            //         if(count == 0) break;
+            //     }
                 
-            }
-            while (true)
-            {
-                int count = 0;
-                System.Console.WriteLine("Nhập tên lớp học: ");
-                this.className = Console.ReadLine();
-                foreach(lopHoc lh in cd.getQuanLyLopHoc())
-                {
-                    if(this.className.Equals(lh.getClassName()))
-                    {
-                        System.Console.WriteLine("Tên lớp học đã tồn tại!");
-                        count++;
-                    }
-                }if(count == 0) break;
-            }
+            // }
+            // while (true)
+            // {
+            //     int count = 0;
+            //     System.Console.WriteLine("Nhập tên lớp học: ");
+            //     this.className = Console.ReadLine();
+            //     foreach(lopHoc lh in cd.getQuanLyLopHoc())
+            //     {
+            //         if(this.className.Equals(lh.getClassName()))
+            //         {
+            //             System.Console.WriteLine("Tên lớp học đã tồn tại!");
+            //             count++;
+            //         }
+            //     }if(count == 0) break;
+            // }
             System.Console.WriteLine("Nhập mã lớp học: ");
-                this.classID = Console.ReadLine();
-System.Console.WriteLine("Nhập tên lớp học: ");
-                this.className = Console.ReadLine();
+            this.classID = Console.ReadLine();
+            System.Console.WriteLine("Nhập tên lớp học: ");
+            this.className = Console.ReadLine();
             while (true)
             {
                 System.Console.WriteLine("Nhập số lượng học sinh: ");

@@ -19,7 +19,7 @@ namespace Bai1
                     case 1:
                         
                         cd.addClass();
-                        cd.showList();
+                        cd.showAllList();
                         break;
                     case 2:
                         break;
