@@ -27,7 +27,7 @@ namespace Bai2
             for(int i = 0; i < listBook.GetLength(0); i++)
             {
                 Random rand = new Random();
-                int shekfSize = rand.Next(0,10);
+                int shekfSize = rand.Next(0,20);
                 listBook[i] = new Book[shekfSize];
             }
         }
@@ -125,59 +125,73 @@ namespace Bai2
         // in thông tin sách theo vị trí kệ
         public void showBookFromLocation()
         {
-            int count = 0;
-            System.Console.WriteLine("Nhập vị trí kệ: ");
-            int keSach = Convert.ToInt32(Console.ReadLine());
-            while (true)
+            String confirm = "";
+            do
             {
-                if(keSach >= 0 && keSach < 10) break;
-                else System.Console.WriteLine("Nhập sai vị trí kệ (0 -> 9)");
-            }
-            for(int i = 0; i < listBook.GetLength(0); i++)
-            {
-                if(listBook[keSach] == listBook[i])
+                int count = 0;
+                System.Console.WriteLine("Nhập vị trí kệ: ");
+                int keSach = Convert.ToInt32(Console.ReadLine());
+                while (true)
                 {
-                    count++;
-                    System.Console.WriteLine("Kệ sách {0}: ", keSach);
-                    Book[] itemBook = listBook[keSach];
-                    for(int j = 0; j < itemBook.GetLength(0); j++)
+                    if(keSach >= 0 && keSach < 10) break;
+                    else System.Console.WriteLine("Nhập sai vị trí kệ (0 -> 9)");
+                }
+                for(int i = 0; i < listBook.GetLength(0); i++)
+                {
+                    if(listBook[keSach] == listBook[i])
                     {
-                        if(listBook[keSach][j] != null)
+                        
+                        System.Console.WriteLine("Kệ sách {0}: ", keSach);
+                        Book[] itemBook = listBook[keSach];
+                        for(int j = 0; j < itemBook.GetLength(0); j++)
                         {
-                            System.Console.WriteLine("{0,-3}+ {1}", " ",listBook[keSach][j].output());
+                            if(listBook[keSach][j] != null)
+                            {   count++;
+                                System.Console.WriteLine("{0,-3}+ {1}", " ",listBook[keSach][j].output());
+                            }
                         }
                     }
-                }
-            }if(count == 0) System.Console.WriteLine("Kệ sách chưa có sách");
+                }if(count == 0) System.Console.WriteLine("Kệ sách chưa có sách");
+                System.Console.WriteLine("Bạn có muốn tiếp tục? (Bấm n: thoát!)");
+                confirm = Console.ReadLine();
+            } while (!confirm.Equals("n"));
+            
         }
 
         // in vị trí và tổng số sách theo kệ
         public void showBookShelfAndTotalBooks()
         {
-            int count = 0;
-            System.Console.WriteLine("Nhập vị trí kệ: ");
-            int keSach = Convert.ToInt32(Console.ReadLine());
-            while (true)
+            String confirm = "";
+            do
             {
-                if(keSach >= 0 && keSach < 10) break;
-                else System.Console.WriteLine("Nhập sai vị trí kệ (0 -> 9)");
-            }
-            for(int i = 0; i < listBook.GetLength(0); i++)
-            {
-                if(listBook[keSach] == listBook[i])
+                int count = 0;
+                System.Console.WriteLine("Nhập vị trí kệ: ");
+                int keSach = Convert.ToInt32(Console.ReadLine());
+                while (true)
                 {
-                    
-                    System.Console.WriteLine("Kệ sách {0}: ", keSach);
-                    Book[] itemBook = listBook[keSach];
-                    for(int j = 0; j < itemBook.GetLength(0); j++)
+                    if(keSach >= 0 && keSach < 10) break;
+                    else System.Console.WriteLine("Nhập sai vị trí kệ (0 -> 9)");
+                }
+                for(int i = 0; i < listBook.GetLength(0); i++)
+                {
+                    if(listBook[keSach] == listBook[i])
                     {
-                        if(listBook[keSach][j] != null)
+                        
+                        System.Console.WriteLine("Kệ sách {0}: ", keSach);
+                        Book[] itemBook = listBook[keSach];
+                        for(int j = 0; j < itemBook.GetLength(0); j++)
                         {
-                            count++;
+                            if(listBook[keSach][j] != null)
+                            {
+                                count++;
+                            }
                         }
                     }
-                }
-            }System.Console.WriteLine("Tổng số sách: {0}", count);
+                }System.Console.WriteLine("Tổng số sách: {0}", count);
+                System.Console.WriteLine("Bạn có muốn tiếp tục? (Bấm n: thoát!)");
+                confirm = Console.ReadLine();
+            } while (!confirm.Equals("n"));
+            
         }
         
         public void showAllBook()
