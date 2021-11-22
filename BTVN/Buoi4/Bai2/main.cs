@@ -8,8 +8,38 @@ namespace Bai2
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             bookHouse bh = new bookHouse();
-            bh.addBook();
-            bh.showAllBook();
+            int choose;
+            Boolean flag = true;
+            do
+            {
+                showMenu();
+                choose = Convert.ToInt32(Console.ReadLine());
+                switch (choose)
+                {
+                    case 1:
+                        bh.addBook();
+                        break;
+                    case 2:
+                        bh.updateBook();
+                        break;
+                    case 3:
+                        bh.showBookFromLocation();
+                        break;
+                    case 4:
+                        bh.showBookShelfAndTotalBooks();
+                        break;
+                    case 5:
+                        bh.showAllBook();
+                        break;
+                    case 6:
+                        System.Console.WriteLine("Thoát!");
+                        break;
+                    default:
+                        System.Console.WriteLine("Nhập sai! vui lòng chọn lại");
+                        break;
+                }
+                if(choose == 6) flag = false;
+            } while (flag == true);
         }
         static void showMenu()
         {
