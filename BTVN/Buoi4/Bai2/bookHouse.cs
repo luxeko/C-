@@ -27,7 +27,7 @@ namespace Bai2
             for(int i = 0; i < listBook.GetLength(0); i++)
             {
                 Random rand = new Random();
-                int shekfSize = rand.Next(0,20);
+                int shekfSize = rand.Next(1,21);
                 listBook[i] = new Book[shekfSize];
             }
         }

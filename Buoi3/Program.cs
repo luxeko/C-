@@ -9,7 +9,7 @@ namespace Buoi3
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine("---- Mảng 1 chiều ----");
             // Mảng 1 chiều: các phần tử cùng kiểu được lưu trữ trên cùng 1 hàng.
-            // mang1Chieu();
+            mang1Chieu();
 
             // Mảng đa chiều:
             // 1. Mảng hình chữ nhật - rectangur: kích thước của mỗi chiều là cố định, số chiều = số dấu, trong [] + 1
@@ -91,7 +91,7 @@ namespace Buoi3
             Random rand = new Random();
             for(int i = 0; i < nums.Length; i++)
             {
-                int randomNum = rand.Next(0,9);
+                int randomNum = rand.Next(1,9);
                 // nums[i] = randomNum;
                 nums.SetValue(randomNum, i);
             }
