@@ -20,7 +20,6 @@ namespace Bai2
             this.count = count;
         }
 
-
         public bookHouse()
         {
             listBook = new Book[10][];
