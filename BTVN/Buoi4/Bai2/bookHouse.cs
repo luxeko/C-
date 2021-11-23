@@ -2,224 +2,90 @@ using System;
 
 namespace Bai2
 {
-    public class bookHouse
+    public class BookHouse
     {
-        private Book[][] listBook;
-        private int count = 0;
+        private Sach[][] listBook;
 
-        public Book[][] getListBook() {
-            return this.listBook;
-        }
-        public void setListBook(Book[][] listBook) {
-            this.listBook = listBook;
-        }
-        public int getCount() {
-            return this.count;
-        }
-        public void setCount(int count) {
-            this.count = count;
-        }
+        // mảng 1 chiều chứa vị trí trống tiếp theo trong từng kệ
+        private int[] listViTri;
 
-        public bookHouse()
+        public BookHouse()
         {
-            listBook = new Book[10][];
+            listBook = new Sach[20][];
+            listViTri = new int[listBook.GetLength(0)];
             // Khởi tạo các mảng 1 chiều trong listBook
             for(int i = 0; i < listBook.GetLength(0); i++)
             {
                 Random rand = new Random();
-                int shekfSize = rand.Next(10,30);
-                listBook[i] = new Book[shekfSize];
+                int shekfSize = rand.Next(10,20);
+                listBook[i] = new Sach[shekfSize];
             }
         }
-        public bookHouse(Book[][] listBook, int count)
+
+        internal Sach[][] ListBook { get => listBook; set => listBook = value; }
+        public int[] ListViTri { get => listViTri; set => listViTri = value; }
+
+
+        // phuong thuc nghiep vu
+        /*
+            return:
+                -1: thông tin đầu vào ko đúng
+                0: kệ đầy
+                1: thêm thành công
+        */
+        public int addBook(Sach sach, int vitriKe)
         {
-            this.listBook = listBook;
-            this.count = count;
+            // hỏi người dùng lựa chọn kệ sạch 0 - 19
+            // thêm các quyển sách vào trong listBook theo kệ sách
+            if(sach == null || vitriKe < 0 || vitriKe >= listBook.GetLength(0))
+            {
+                return -1;
+            }
+            Sach[] keSach = listBook[vitriKe];
+            int vitriTrongTiepTheo = this.listViTri[vitriKe];
+            if(vitriTrongTiepTheo >= keSach.GetLength(0))
+            {
+                return 0;
+            }
+            System.Console.WriteLine("Số vị trí tiếp theo là: " + vitriTrongTiepTheo+1);
+            listBook[vitriKe][vitriTrongTiepTheo] = sach;
+            this.listViTri[vitriKe] = ++vitriTrongTiepTheo;
+            return 1;
         }
 
-        public void addBook()
+        public void showAll()
         {
-            String confirm = "";
-            do
+            for(int i = 0; i < this.listBook.GetLength(0); i++)
             {
-                int keSach = 0;
-                int viTri = 0;
-                while (true)
+                System.Console.WriteLine("- Kệ sách {0} hiện có {1} quyển sách: ", i, listViTri[i]);
+                for(int j = 0; j < listViTri[i]; j++)
                 {
-                    // hỏi người dùng lựa chọn kệ sạch 0 - 49
-                    // thêm các quyển sách vào trong listBook theo kệ sách 
-                    System.Console.WriteLine("Nhập kệ sách: ");
-                    keSach = Convert.ToInt32(Console.ReadLine());
-                    if(keSach >= 0 && keSach < 20){
-                        break;
-                    }
-                    else
-                    {
-                        System.Console.WriteLine("Kệ sách không hợp lệ!");
-                    }
-                }
-                while (true)
-                {
-                    System.Console.WriteLine("Nhập vi tri: ");
-                    viTri = Convert.ToInt32(Console.ReadLine());
-                    if(listBook[keSach][viTri] != null)
-                    {
-                        System.Console.WriteLine("Vị trí đã tồn tại sách");
-                        break;
-                    }
-                    else{
-                        listBook[keSach][viTri] = new Book();
-                        listBook[keSach][viTri].input();
-                        break;
-                    }
-                }
-                
-                System.Console.WriteLine("Bạn có muốn tiếp tục? (Bấm n: thoát!)");
-                confirm = Console.ReadLine();
-            } while (!confirm.Equals("n"));
-        }
-
-        public void updateBook()
-        {
-            String confirm = "";
-            do
-            {
-                int keSach = 0;
-                int viTri = 0;
-                while (true)
-                {
-                    // hỏi người dùng lựa chọn kệ sạch 0 - 49
-                    // thêm các quyển sách vào trong listBook theo kệ sách 
-                    System.Console.WriteLine("Nhập kệ sách: ");
-                    keSach = Convert.ToInt32(Console.ReadLine());
-                    if(keSach >= 0 && keSach < 20)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        System.Console.WriteLine("Kệ sách không hợp lệ!");
-                    }
-                }
-                while (true)
-                {
-                    System.Console.WriteLine("Nhập vi tri: ");
-                    viTri = Convert.ToInt32(Console.ReadLine());
-                    if(listBook[keSach][viTri] == null)
-                    {
-                        System.Console.WriteLine("Vị trí chưa tồn tại sách");
-                        break;
-                    }
-                    else{
-                        listBook[keSach][viTri] = new Book();
-                        listBook[keSach][viTri].input();
-                        break;
-                    }
-                }
-                
-                System.Console.WriteLine("Bạn có muốn tiếp tục? (Bấm n: thoát!)");
-                confirm = Console.ReadLine();
-            } while (!confirm.Equals("n"));
-        }
-
-        // in thông tin sách theo vị trí kệ
-        public void showBookFromLocation()
-        {
-            String confirm = "";
-            do
-            {
-                int count = 0;
-                System.Console.WriteLine("Nhập vị trí kệ: ");
-                int keSach = Convert.ToInt32(Console.ReadLine());
-                while (true)
-                {
-                    if(keSach >= 0 && keSach < 10) break;
-                    else System.Console.WriteLine("Nhập sai vị trí kệ (0 -> 9)");
-                }
-                for(int i = 0; i < listBook.GetLength(0); i++)
-                {
-                    if(listBook[keSach] == listBook[i])
-                    {
-                        
-                        System.Console.WriteLine("Kệ sách {0}: ", keSach);
-                        Book[] itemBook = listBook[keSach];
-                        for(int j = 0; j < itemBook.GetLength(0); j++)
-                        {
-                            if(listBook[keSach][j] != null)
-                            {   count++;
-                                System.Console.WriteLine("{0,-3}+ {1}", " ",listBook[keSach][j].output());
-                            }
-                        }
-                    }
-                }if(count == 0) System.Console.WriteLine("Kệ sách chưa có sách");
-                System.Console.WriteLine("Bạn có muốn tiếp tục? (Bấm n: thoát!)");
-                confirm = Console.ReadLine();
-            } while (!confirm.Equals("n"));
-            
-        }
-
-        // in vị trí và tổng số sách theo kệ
-        public void showBookShelfAndTotalBooks()
-        {
-            String confirm = "";
-            do
-            {
-                int count = 0;
-                System.Console.WriteLine("Nhập vị trí kệ: ");
-                int keSach = Convert.ToInt32(Console.ReadLine());
-                while (true)
-                {
-                    if(keSach >= 0 && keSach < 10) break;
-                    else System.Console.WriteLine("Nhập sai vị trí kệ (0 -> 9)");
-                }
-                for(int i = 0; i < listBook.GetLength(0); i++)
-                {
-                    if(listBook[keSach] == listBook[i])
-                    {
-                        
-                        System.Console.WriteLine("Kệ sách {0}: ", keSach);
-                        Book[] itemBook = listBook[keSach];
-                        for(int j = 0; j < itemBook.GetLength(0); j++)
-                        {
-                            if(listBook[keSach][j] != null)
-                            {
-                                count++;
-                            }
-                        }
-                    }
-                }System.Console.WriteLine("Tổng số sách: {0}", count);
-                System.Console.WriteLine("Bạn có muốn tiếp tục? (Bấm n: thoát!)");
-                confirm = Console.ReadLine();
-            } while (!confirm.Equals("n"));
-            
-        }
-        
-        public void showAllBook()
-        {
-            // hiển thị các sách theo kệ
-            /*
-                - kệ 1: 
-                    + s1
-                    + s2
-                - kệ 2:
-                    + s3
-                    + s4
-                    + s5
-                ...    
-            */
-            for(int i = 0; i < listBook.GetLength(0); i++)
-            {
-                System.Console.WriteLine("Kệ sách {0}: ", i);
-                Book[] itemBook = listBook[i];
-                for(int j = 0; j < itemBook.GetLength(0); j++)
-                {
-                    if(listBook[i][j] != null)
-                    {
-                        System.Console.WriteLine("{0,-3}+ {1}", " ",listBook[i][j].output());
-                    }
+                    Sach book = this.listBook[i][j];
+                    String ttBook;
+                    book.output(out ttBook);
+                    // System.Console.WriteLine("{0,-3}+ {1}", " ",listBook[i][j].output());
                     
                 }
             }
+        }
+
+        // Hàm check trùng ID
+        public Boolean checkID(string id)
+        {
+            // duyệt từng kệ
+            for(int i = 0; i < this.listBook.GetLength(0); i++)
+            {
+                //duyệt từng vị trí
+                for(int j = 0; j < this.listBook[i].GetLength(0); j++)
+                {
+                    Sach b = this.listBook[i][j];
+                    if(b.BookID.Equals(id))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }

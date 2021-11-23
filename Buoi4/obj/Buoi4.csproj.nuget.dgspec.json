@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "e:\\CSharp\\Buoi4\\Buoi4.csproj": {}
+    "E:\\CSharp\\Buoi4\\Buoi4.csproj": {}
   },
   "projects": {
-    "e:\\CSharp\\Buoi4\\Buoi4.csproj": {
+    "E:\\CSharp\\Buoi4\\Buoi4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\CSharp\\Buoi4\\Buoi4.csproj",
+        "projectUniqueName": "E:\\CSharp\\Buoi4\\Buoi4.csproj",
         "projectName": "Buoi4",
-        "projectPath": "e:\\CSharp\\Buoi4\\Buoi4.csproj",
+        "projectPath": "E:\\CSharp\\Buoi4\\Buoi4.csproj",
         "packagesPath": "C:\\Users\\Duc Anh\\.nuget\\packages\\",
-        "outputPath": "e:\\CSharp\\Buoi4\\obj\\",
+        "outputPath": "E:\\CSharp\\Buoi4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Duc Anh\\AppData\\Roaming\\NuGet\\NuGet.Config"
