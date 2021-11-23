@@ -30,15 +30,18 @@ namespace Bai2
             //     System.Console.WriteLine("Nhập ID: ");
             //     this.BookID = Console.ReadLine();
             //     //check trùng id
-            //     bool checkTrung = nhaSach.checkID(this.BookID);
-            //     if(checkTrung == false)
-            //     {
-            //         break;
-            //     }
-            //     else
-            //     {
-            //         System.Console.WriteLine("ID {0} đã tồn tại! vui lòng nhập lại");
-            //     }
+            //     if(nhaSach.ListBook != null){
+            //         bool checkTrung = nhaSach.checkID(this.BookID);
+            //         if(checkTrung == false)
+            //         {
+            //             break;
+            //         }
+            //         else
+            //         {
+            //             System.Console.WriteLine("ID {0} đã tồn tại! vui lòng nhập lại");
+            //         }
+            //     }else break;
+                
             // }
             System.Console.WriteLine("Nhập ID: ");
             this.BookID = Console.ReadLine();
