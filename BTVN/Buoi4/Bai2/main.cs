@@ -99,10 +99,11 @@ namespace Bai2
         static void Case2(ref BookHouse nhaSach)
         {
             String confirm = "";
+            Sach book;
+            int keSach = 0;
+            int viTri = 0;
             do
             {
-                int keSach = 0;
-                int viTri = 0;
                 while (true)
                 {
                     // hỏi người dùng lựa chọn kệ sạch 0 - 49
@@ -120,17 +121,30 @@ namespace Bai2
                 }
                 while (true)
                 {
-                    System.Console.WriteLine("Nhập vị tri sách (bắt đầu từ 1): ");
+                    System.Console.WriteLine("Nhập vị tri sách (bắt đầu từ 0): ");
                     viTri = Convert.ToInt32(Console.ReadLine());
-                    if(nhaSach.ListBook[keSach][viTri-1] == null)
+                    if(nhaSach.ListBook[keSach][viTri] == null)
                     {
                         System.Console.WriteLine("Vị trí chưa có sách");
                         break;
                     }
                     else{
-                        nhaSach.ListBook[keSach][viTri-1] = new Sach();
-                        nhaSach.ListBook[keSach][viTri-1].input(ref nhaSach);
-                        break;
+                        while (true)
+                        {
+                            System.Console.WriteLine("Nhập id sách để update: ");
+                            string id = Console.ReadLine();
+                            bool checkID = nhaSach.checkID(id);
+                            if(checkID == true)
+                            {
+                                System.Console.WriteLine("Nhập 1 quyển sách");
+                                book = nhaSach.ListBook[keSach][viTri];
+                                book.input(ref nhaSach);                                
+                                break;
+                            }
+                            else{
+                                System.Console.WriteLine("Id không tồn tại");
+                            }
+                        }
                     }
                 }
                 System.Console.WriteLine("Bạn có muốn tiếp tục? (Bấm n: thoát!)");

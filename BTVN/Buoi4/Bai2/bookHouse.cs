@@ -79,13 +79,19 @@ namespace Bai2
                 for(int j = 0; j < this.listBook[i].GetLength(0); j++)
                 {
                     Sach b = this.listBook[i][j];
-                    if(b.BookID.Equals(id))
+                    if(this.listBook[i][j] != null)
                     {
-                        return true;
+                        
+                        if(b.BookID.Equals(id))
+                        {
+                            return true;
+                        }
                     }
                 }
             }
             return false;
+            
         }
+
     }
 }
