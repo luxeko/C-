@@ -3,9 +3,37 @@ using System.IO;
 
 namespace Buoi7
 {
+    
     class Program
     {
         static void Main(string[] args)
+         {
+            System.Console.WriteLine("Read file: ");
+            try
+            {
+                
+                //b1: tạo stream kết nối tới nguồn dữ liệu
+                using (StreamReader sr = new StreamReader("E:\\CSharp\\Buoi7\\dsbook.txt", System.Text.Encoding.UTF8))
+                {
+                    //b2: thực thi
+                    string line = "";
+                    while((line = sr.ReadLine()) != null)
+                    {
+                        System.Console.WriteLine(line);
+                        //validate line -> book hop le: id ko trung nhau, name != null, titile, price, float > 0, publishdate: datetime
+                        // book hop le: them vao list<book>
+                    }
+                }
+                
+            }
+            catch (System.Exception e)
+            {
+                System.Console.WriteLine("Loi" + e.Message);
+            }
+            System.Console.WriteLine("End read file");
+            Console.ReadLine();
+        }
+        static void Main_ReadFile()
         {
             StreamReader sr = null;
             try
