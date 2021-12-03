@@ -3,7 +3,7 @@ namespace Assignment
 {
     public class Products
     {
-        private int id = 0;
+        private int id = 1;
         private string codePr;
         private string namePr;
         private float price;
@@ -25,17 +25,55 @@ namespace Assignment
         public string NamePr { get => namePr; set => namePr = value; }
         public float Price { get => price; set => price = value; }
 
-        public void input()
+        public virtual void input(ProductsDAO dsSanPham)
         {
-        
-            System.Console.WriteLine("Nhập mã sản phẩm: ");
-            this.codePr = Console.ReadLine();
-            System.Console.WriteLine("Nhập tên sản phẩm: ");
-            this.namePr = Console.ReadLine();
-            System.Console.WriteLine("Nhập giá sản phẩm: ");
-            this.price = Convert.ToSingle(Console.ReadLine());
-            
-            this.id++;
+            while (true)
+            {
+                int count = 0;
+                System.Console.WriteLine("Nhập mã sản phẩm: ");
+                this.codePr = Console.ReadLine();
+                if(this.codePr.Length == 4){
+                    foreach(Products pr in dsSanPham.ListPr)
+                    {
+                        if(this.codePr.Equals(pr.CodePr))
+                        {
+                            System.Console.WriteLine("Mã sản phẩm đã tồn tại!");
+                            count++;
+                        }
+                    }
+                    if(count == 0)break;
+                }
+                else System.Console.WriteLine("Mã sản phẩm phải có 4 ký tự !");
+            }
+            while (true)
+            {
+                System.Console.WriteLine("Nhập tên sản phẩm: ");
+                this.namePr = Console.ReadLine();
+                if(this.namePr.Trim().Equals("")) System.Console.WriteLine("Tên sản phẩm không được để rỗng");
+                else break;
+            }
+            try
+            {
+                System.Console.WriteLine("Nhập giá sản phẩm: ");
+                this.price = Single.Parse(Console.ReadLine());
+            }
+            catch (System.Exception)
+            {
+                System.Console.WriteLine("Giá tiền không hợp lệ!");
+            }
+            while (true)
+            {
+                int count = 0;
+                foreach(Products sp in dsSanPham.ListPr)
+                {
+                    if(this.id == sp.Id)
+                    {
+                        this.id ++;
+                        count++;
+                    }
+                }
+                if(count == 0) break;
+            }
             
         }
 

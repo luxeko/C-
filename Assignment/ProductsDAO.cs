@@ -4,10 +4,11 @@ namespace Assignment
 {
     public class ProductsDAO
     {
-        List<Products> listPr = new List<Products>();
+        List<Products> listPr;
 
         public ProductsDAO()
         {
+            listPr = new List<Products>();
         }
 
         public ProductsDAO(List<Products> listPr)

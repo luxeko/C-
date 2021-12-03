@@ -18,12 +18,17 @@ namespace Assignment
                 switch (check)
                 {
                     case 1:
-                        
-                        Products pr = new Products();
-                       
                         System.Console.WriteLine("1. CRUD Vegestable"); 
-                        pr.input();
-                        listPr.addPr(pr);
+                        string confirm ="";
+                        do
+                        {
+                            Products pr = new Products();
+                            pr.input(listPr);
+                            listPr.addPr(pr);
+                            System.Console.WriteLine("Tiếp tục? (Bấm n : stop)");
+                            confirm = Console.ReadLine();
+                        } while (!confirm.Equals("n"));
+                        
                         listPr.inDanhSachSP();
                         break;
                     case 2:

@@ -1,0 +1,16 @@
+E:\CSharp\KiemTra\obj\Debug\net5.0\KiemTra.csproj.AssemblyReference.cache
+E:\CSharp\KiemTra\obj\Debug\net5.0\KiemTra.GeneratedMSBuildEditorConfig.editorconfig
+E:\CSharp\KiemTra\obj\Debug\net5.0\KiemTra.AssemblyInfoInputs.cache
+E:\CSharp\KiemTra\obj\Debug\net5.0\KiemTra.AssemblyInfo.cs
+E:\CSharp\KiemTra\obj\Debug\net5.0\KiemTra.csproj.CoreCompileInputs.cache
+E:\CSharp\KiemTra\bin\Debug\net5.0\KiemTra.exe
+E:\CSharp\KiemTra\bin\Debug\net5.0\KiemTra.deps.json
+E:\CSharp\KiemTra\bin\Debug\net5.0\KiemTra.runtimeconfig.json
+E:\CSharp\KiemTra\bin\Debug\net5.0\KiemTra.runtimeconfig.dev.json
+E:\CSharp\KiemTra\bin\Debug\net5.0\KiemTra.dll
+E:\CSharp\KiemTra\bin\Debug\net5.0\ref\KiemTra.dll
+E:\CSharp\KiemTra\bin\Debug\net5.0\KiemTra.pdb
+E:\CSharp\KiemTra\obj\Debug\net5.0\KiemTra.dll
+E:\CSharp\KiemTra\obj\Debug\net5.0\ref\KiemTra.dll
+E:\CSharp\KiemTra\obj\Debug\net5.0\KiemTra.pdb
+E:\CSharp\KiemTra\obj\Debug\net5.0\KiemTra.genruntimeconfig.cache
