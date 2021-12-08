@@ -46,7 +46,7 @@ namespace Buoi5
             // duyệt: index
 
             System.Console.WriteLine("duyệt theo index: ");
-            for(int i = 00; i < dsNhanSu.Count; i++)
+            for(int i = 0; i < dsNhanSu.Count; i++)
             {
                 System.Console.WriteLine(dsNhanSu[i]);
             }

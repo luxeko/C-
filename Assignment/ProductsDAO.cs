@@ -4,17 +4,13 @@ namespace Assignment
 {
     public class ProductsDAO
     {
-        List<Products> listPr;
+        static List<Products> listPr;
 
         public ProductsDAO()
         {
             listPr = new List<Products>();
         }
 
-        public ProductsDAO(List<Products> listPr)
-        {
-            this.listPr = listPr;
-        }
         public List<Products> ListPr { get => listPr; set => listPr = value; }
 
         // Add product
@@ -24,24 +20,62 @@ namespace Assignment
             {
                 System.Console.WriteLine("Tạo product thất bại");
             }
-            else{
+            else
+            {
                 listPr.Add(sanPham);
             }
         }
 
+        // Xuat danh sach
         public void inDanhSachSP()
         {
             if(listPr != null){
                 foreach(Products pr in listPr)
                 {
-                    System.Console.WriteLine(pr.ToString());
+                    System.Console.WriteLine("- {0}",pr.ToString());
                 }
             }
             else
             {
                 System.Console.WriteLine("Chưa có sản phẩm");
             }
-            
+        }
+        public static int CountProductInList(List<Products> listProduct)
+        {
+            int count = 0;
+            foreach (Products item in listProduct)
+            {
+                count++;
+            }
+            return count;
+        }
+        public static float SumProductPriceInList(List<Products> listProduct, float discount)
+        {
+            float sum = 0;
+            foreach (Products item in listProduct)
+            {
+                sum += item.Price;
+            }
+            sum -= sum * discount;
+            return sum;
+        }
+        public static float ToTalAll(List<Products> listProduct)
+        {
+            float sum = 0;
+            foreach (Products item in listProduct)
+            {
+                sum += item.Price;
+            }
+            return sum;
+        }
+        public static Products SearchProduct(string productCode)
+        {
+            foreach (Products item in listPr)
+            {
+                if (productCode.Equals(item.CodePr))
+                    return item;
+            }
+            return null;
         }
     }
 }

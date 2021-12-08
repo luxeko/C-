@@ -3,15 +3,13 @@ namespace Assignment
 {
     public class Products
     {
-        private int id = 1;
-        private string codePr;
-        private string namePr;
-        private float price;
-
+        public int id = 1;
+        public string codePr;
+        public string namePr;
+        public float price;
         public Products()
         {
         }
-
         public Products(int id, string codePr, string namePr, float price)
         {
             this.id = id;
@@ -25,7 +23,7 @@ namespace Assignment
         public string NamePr { get => namePr; set => namePr = value; }
         public float Price { get => price; set => price = value; }
 
-        public virtual void input(ProductsDAO dsSanPham)
+        public virtual void input(ProductsDAO dsPr)
         {
             while (true)
             {
@@ -33,7 +31,7 @@ namespace Assignment
                 System.Console.WriteLine("Nhập mã sản phẩm: ");
                 this.codePr = Console.ReadLine();
                 if(this.codePr.Length == 4){
-                    foreach(Products pr in dsSanPham.ListPr)
+                    foreach(Products pr in dsPr.ListPr)
                     {
                         if(this.codePr.Equals(pr.CodePr))
                         {
@@ -64,7 +62,7 @@ namespace Assignment
             while (true)
             {
                 int count = 0;
-                foreach(Products sp in dsSanPham.ListPr)
+                foreach(Products sp in dsPr.ListPr)
                 {
                     if(this.id == sp.Id)
                     {
@@ -74,7 +72,25 @@ namespace Assignment
                 }
                 if(count == 0) break;
             }
-            
+        }
+        public virtual void inputUpdate()
+        {
+            while (true)
+            {
+                System.Console.WriteLine("Nhập tên sản phẩm: ");
+                this.namePr = Console.ReadLine();
+                if(this.namePr.Trim().Equals("")) System.Console.WriteLine("Tên sản phẩm không được để rỗng");
+                else break;
+            }
+            try
+            {
+                System.Console.WriteLine("Nhập giá sản phẩm: ");
+                this.price = Single.Parse(Console.ReadLine());
+            }
+            catch (System.Exception)
+            {
+                System.Console.WriteLine("Giá tiền không hợp lệ!");
+            }
         }
 
         public override string ToString()

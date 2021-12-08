@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CSharp\\KiemTra\\KiemTra.csproj": {}
+    "E:\\CSharp\\kiemtra2\\KiemTra.csproj": {}
   },
   "projects": {
-    "E:\\CSharp\\KiemTra\\KiemTra.csproj": {
+    "E:\\CSharp\\kiemtra2\\KiemTra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CSharp\\KiemTra\\KiemTra.csproj",
+        "projectUniqueName": "E:\\CSharp\\kiemtra2\\KiemTra.csproj",
         "projectName": "KiemTra",
-        "projectPath": "E:\\CSharp\\KiemTra\\KiemTra.csproj",
+        "projectPath": "E:\\CSharp\\kiemtra2\\KiemTra.csproj",
         "packagesPath": "C:\\Users\\Duc Anh\\.nuget\\packages\\",
-        "outputPath": "E:\\CSharp\\KiemTra\\obj\\",
+        "outputPath": "E:\\CSharp\\kiemtra2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Duc Anh\\AppData\\Roaming\\NuGet\\NuGet.Config"
