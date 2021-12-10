@@ -14,6 +14,14 @@ namespace Assignment
             }
                 
         }
+        public static void Show(List<Order> orderList, VegesDAO listVg, ComboDAO listCb)
+        {
+            foreach (Order item in orderList)
+            {
+                item.inDachSachSanPhamDaBan(listVg, listCb);
+            }
+                
+        }
         public static void CreateOrder(ProductsDAO listPr)
         {
             Order order = new Order();

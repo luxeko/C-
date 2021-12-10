@@ -84,6 +84,7 @@ namespace Assignment
                             {
                                 prCount++;
                                 this.BuyingList.Add(pr);
+                                System.Console.WriteLine("Thêm product mã {0} thành công", strInputCode[i]);
                                 // newPr.CountSale++;
                             }
                         }
@@ -108,6 +109,28 @@ namespace Assignment
                 sDiscount = "10%";
             Console.WriteLine("Mã order: {0}, Mã khách hàng: {1}, Ngày tạo: {2}, Số lượng: {3}, Discount: {4}, Số tiền: {5}$, Tổng tiền sau discount: {6}$"
                 , OrderId, this.customerID, this.createDate, this.count, sDiscount, this.tongTien, this.amount);
+        }
+
+        public void inDachSachSanPhamDaBan(VegesDAO listVg, ComboDAO listCb)
+        {
+            foreach(Products pr in BuyingList)
+            {
+
+               foreach (Vegestable vg in listVg.ListVG)
+               {
+                   if(vg.codePr.Equals(pr.CodePr))
+                   {
+                       System.Console.WriteLine("- {0}",vg.ToString());
+                   }
+               }
+               foreach (Combo cb in listCb.ListCombo)
+               {
+                   if(cb.codePr.Equals(pr.CodePr))
+                   {
+                       System.Console.WriteLine("- {0}",cb.ToString());
+                   }
+               }
+            }
         }
     }
 }

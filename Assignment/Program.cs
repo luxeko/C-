@@ -50,7 +50,7 @@ namespace Assignment
                                         Vegestable vg = new Vegestable();
                                         vg.input(listPr);
                                         listVg.addVeg(vg, listPr);
-                                        System.Console.WriteLine("Tiếp tục? (Bấm n : stop)");
+                                        System.Console.WriteLine("Tiếp tục tạo vegestable? (Bấm n : stop)");
                                         confirm = Console.ReadLine();
                                     } while (!confirm.Equals("n"));
                                     break;
@@ -94,8 +94,8 @@ namespace Assignment
                                     {
                                         Combo cb = new Combo();
                                         cb.input(listPr);
-                                        listCb.newCombo(cb, listPr);
-                                        System.Console.WriteLine("Tiếp tục? (Bấm n: stop)");
+                                        listCb.newCombo(cb, listPr, listVg);
+                                        System.Console.WriteLine("Tiếp tục tạo combo? (Bấm n: stop)");
                                         confirm = Console.ReadLine();
                                     } while (!confirm.Equals("n"));
                                     break;
@@ -143,7 +143,7 @@ namespace Assignment
                                 case 1:
                                     System.Console.WriteLine("***** List products *****");
                                     listPr.inDanhSachSP();
-                                    System.Console.WriteLine("***** List vegetable *****");
+                                    System.Console.WriteLine("***** List vegestable *****");
                                     listVg.inDanhSachVG();
                                     System.Console.WriteLine("***** List combo *****");
                                     listCb.inCombo();
@@ -213,7 +213,14 @@ namespace Assignment
                                 case 1:
                                     listVg.inCodeVegestable();
                                     listCb.inCodeCombo();
-                                    OrderDao.CreateOrder(listPr);
+                                    string confirm;
+                                    do
+                                    {
+                                        OrderDao.CreateOrder(listPr);
+                                        System.Console.WriteLine("Bạn có muốn tiếp tục tạo đơn hàng? (Bấm n : stop)");
+                                        confirm = Console.ReadLine();
+                                    } while (!confirm.Equals("n"));
+                                    
                                     break;
                                 case 2:
                                     OrderDao.ShowAllOrderList(OrderDao.ListOrder);
@@ -229,7 +236,7 @@ namespace Assignment
                         } while (flagOrder == true);
                         break;
                     case 5:
-                        CaseMenuReport();
+                        CaseMenuReport(OrderDao.ListOrder, listVg, listCb);
                         break;
                     case 6:
                         CaseMenuCustomer(listPr);
@@ -241,7 +248,6 @@ namespace Assignment
                         System.Console.WriteLine("Chọn sai. Vui lòng chọn lại");
                         break;
                 }
-                
                 if(check == 7) flag = false;
             } while (flag == true);
         }
@@ -258,7 +264,7 @@ namespace Assignment
             System.Console.WriteLine("Choose: ");
         }
 
-        static void CaseMenuReport()
+        static void CaseMenuReport(List<Order> orderList, VegesDAO listVg, ComboDAO listCb)
         {
             int choose;
             bool flag = true;
@@ -273,7 +279,7 @@ namespace Assignment
                 switch (choose)
                 {   
                     case 1:
-                        SubMenuReport_1();
+                        SubMenuReport_1(orderList, listVg, listCb);
                         break;
                     case 2:
                         break;
@@ -288,12 +294,13 @@ namespace Assignment
                 if(choose == 3) flag = false;
             } while (flag == true);
         }
-        static void SubMenuReport_1()
+        static void SubMenuReport_1(List<Order> orderList, VegesDAO listVg, ComboDAO listCb)
         {
             int totalAllProductSold = OrderDao.TotalProductSold(OrderDao.ListOrder);
             float totalMoney = OrderDao.TotalSale(OrderDao.ListOrder);
-            System.Console.WriteLine("Tổng số lượng sản phẩm đã bán: {0}", totalAllProductSold);
-            System.Console.WriteLine("Tổng tiền từ các sản phẩm đã bán: {0}$", totalMoney);
+            System.Console.WriteLine("Tổng số lượng sản phẩm đã bán: {0} Tổng tiền từ các sản phẩm đã bán: {1}$", totalAllProductSold, totalMoney);
+            System.Console.WriteLine("Danh sách sản phẩm đã bán: ");
+            OrderDao.Show(orderList, listVg, listCb);
         }
 
 
@@ -362,11 +369,11 @@ namespace Assignment
 
                             // trường hợp hợp lệ
                             if(part[0].Length == 4 
-                                && !part[0].Trim().Equals("")
-                                && !part[0].Contains(" ") 
-                                && (part[1]) != null 
-                                && !part[1].Trim().Equals("") 
-                                && DateTime.TryParse(part[2], out date1))
+                               && !part[0].Trim().Equals("")
+                               && !part[0].Contains(" ") 
+                               && (part[1]) != null 
+                               && !part[1].Trim().Equals("") 
+                               && DateTime.TryParse(part[2], out date1))
                             {
                                 if(KhachHangDao.ValidateCustomer(part[0]))
                                 {
@@ -395,12 +402,14 @@ namespace Assignment
             Order order = new Order();
             order.input(listPr);
         }
-         public static void AddDataBase(VegesDAO vg, ProductsDAO pr)
+
+
+        public static void AddDataBase(VegesDAO vg, ProductsDAO pr)
         {
             Vegestable vegestable = new Vegestable();
             vg.ListVG.Add(vegestable = new Vegestable
             {
-                id = 80,
+                id = 10,
                 codePr = "1000",
                 namePr = "hoa hong",
                 price = 10.99f,
@@ -412,7 +421,7 @@ namespace Assignment
             Vegestable vegestable1 = new Vegestable();
             vg.ListVG.Add(vegestable1 = new Vegestable
             {
-                id = 81,
+                id = 11,
                 codePr = "1001",
                 namePr = "hoa mai",
                 price = 12,

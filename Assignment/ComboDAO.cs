@@ -19,13 +19,9 @@ namespace Assignment
 
         public List<Combo> ListCombo { get => listCombo; set => listCombo = value; }
 
-        public void comboShowMenu(ProductsDAO dsPr)
-        {
-            
-        }
 
         // ADD Combo
-        public void newCombo(Combo cb, ProductsDAO dsPr)
+        public void newCombo(Combo cb, ProductsDAO dsPr, VegesDAO listVg)
         {
             if(cb == null)
             {
@@ -33,8 +29,77 @@ namespace Assignment
             }
             else
             {
-                listCombo.Add(cb);
                 dsPr.ListPr.Add(cb);
+                listCombo.Add(cb);
+                
+                System.Console.WriteLine("Nhập mã vegestable: ");
+                string maVg = Console.ReadLine();
+                if(checkActive(cb.Status) == 1)
+                {
+                    string[] arrListStr = maVg.Split(new char[] { ',' });
+                    
+                    for(int i = 0; i < arrListStr.GetLength(0); i++)
+                    {
+                        int vgcount = 0;
+                        foreach(Vegestable vg in listVg.ListVG)
+                        {
+                            if(vg.CodePr.Equals(arrListStr[i]))
+                            {   
+                                vgcount++;
+                                cb.Vegestables.Add(vg);
+                                System.Console.WriteLine("Thêm vegestable mã {0} vào combo thành công", arrListStr[i]);
+                            }
+                            // if(!vg.CodePr.Equals(arrListStr[i]))
+                            // {
+                            //     System.Console.WriteLine("Mã vegestable {0} không tồn tại!", arrListStr[i]);
+                            // }
+                        }
+                        if(vgcount == 0)
+                        {
+                            System.Console.WriteLine("Mã vegestable {0} không tồn tại!", arrListStr[i]);
+                        }
+                    }
+                }
+                else if(checkActive(cb.Status)==0)
+                {
+                    System.Console.WriteLine("Combo chưa được Active. Bạn có muốn Active ko? (Bấm y : đồng ý)");
+                    string accept = Console.ReadLine();
+                    if(accept.Equals("y"))
+                    {
+                        cb.Status = "Active";
+                        System.Console.WriteLine("Active thành công. Trạng thái combo: {0}", cb.Status);
+                        System.Console.WriteLine("Nhập mã vegestable: ");
+                        maVg = Console.ReadLine();
+                        string[] arrListStr = maVg.Split(new char[] { ',' });
+                        
+                        for(int i = 0; i < arrListStr.GetLength(0); i++)
+                        {
+                            int vgcount = 0;
+                            foreach(Vegestable vg in listVg.ListVG)
+                            {
+                                if(vg.CodePr.Equals(arrListStr[i]))
+                                {   
+                                    vgcount++;
+                                    cb.Vegestables.Add(vg);
+                                    System.Console.WriteLine("Thêm vegestable mã {0} vào combo thành công", arrListStr[i]);
+                                }
+                                // if(!vg.CodePr.Equals(arrListStr[i]))
+                                // {
+                                //     System.Console.WriteLine("Mã vegestable {0} không tồn tại!", arrListStr[i]);
+                                // }
+                            }
+                            if(vgcount == 0)
+                            {
+                                System.Console.WriteLine("Mã vegestable {0} không tồn tại!", arrListStr[i]);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("Từ chối active. Trạng thái combo: {0}", cb.Status);
+                        cb.Status = "Unactive";
+                    }
+                }
             }
         }
         public void inCombo()
@@ -81,11 +146,14 @@ namespace Assignment
                                 string accept = Console.ReadLine();
                                 if(accept.Equals("y"))
                                 {
-                                    cb.Status = "Active";
+                                    cb.Status = "Active"; 
+                                    System.Console.WriteLine("Active thành công. Trạng thái combo: {0}", cb.Status);
                                     break;
                                 }
-                                else
+                                else if(!accept.Equals("y"))
                                 {
+                                    cb.Status = "Unactive";
+                                    System.Console.WriteLine("Từ chối active. Trạng thái combo: {0}", cb.Status);
                                     break;
                                 }
                             }
@@ -143,7 +211,7 @@ namespace Assignment
                     {
                         Combo cb = new Combo();
                         cb.input(dsPr);
-                        newCombo(cb, dsPr);
+                        newCombo(cb, dsPr, listVg);
                         System.Console.WriteLine("Tiếp tục tạo Combo? (Bấm n: stop)");
                         confirm = Console.ReadLine();
                     } while (!confirm.Equals("n"));
