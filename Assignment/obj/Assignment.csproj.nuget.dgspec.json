@@ -10,11 +10,11 @@
         "projectUniqueName": "E:\\CSharp\\Assignment\\Assignment.csproj",
         "projectName": "Assignment",
         "projectPath": "E:\\CSharp\\Assignment\\Assignment.csproj",
-        "packagesPath": "C:\\Users\\Duc Anh\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\caube\\.nuget\\packages\\",
         "outputPath": "E:\\CSharp\\Assignment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Duc Anh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\caube\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

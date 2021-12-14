@@ -8,7 +8,7 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Duc Anh\\.nuget\\packages\\": {}
+    "C:\\Users\\caube\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -16,11 +16,11 @@
       "projectUniqueName": "E:\\CSharp\\BTVN\\Buoi4\\Bai1\\Bai1.csproj",
       "projectName": "Bai1",
       "projectPath": "E:\\CSharp\\BTVN\\Buoi4\\Bai1\\Bai1.csproj",
-      "packagesPath": "C:\\Users\\Duc Anh\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\caube\\.nuget\\packages\\",
       "outputPath": "E:\\CSharp\\BTVN\\Buoi4\\Bai1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Duc Anh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\caube\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
