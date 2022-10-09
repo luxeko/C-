@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "/JTypzg1IbDo2Imaa13xMgbGGS3zucjicKWZq2y82dlfhG+M3xjXDiSxQ1AOZnMSYvdVIDaEbYbDXhl2ehIy6Q==",
+=======
+  "dgSpecHash": "vwrcnpDrzrlRCUVP+K6HOi3GOd+blSTaduXObiU46eMKa/fDf7Ks3s0ZYNWcX5j8onps9sobbiapEarfO6eJMQ==",
+>>>>>>> e743b3241e9ecdd20c30d8084263e3ddee2e4973
   "success": true,
   "projectFilePath": "E:\\CSharp\\Assignment\\Assignment.csproj",
   "expectedPackageFiles": [],

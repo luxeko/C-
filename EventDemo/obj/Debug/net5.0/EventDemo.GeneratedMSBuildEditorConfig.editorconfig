@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+<<<<<<< HEAD:Buoi8/EventDemo/obj/Debug/net5.0/EventDemo.GeneratedMSBuildEditorConfig.editorconfig
 is_global = true
 build_property.TargetFramework = net5.0
 build_property.TargetPlatformMinVersion = 
@@ -7,8 +7,8 @@ build_property.ProjectTypeGuids =
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = Bai3
-build_property.ProjectDir = e:\CSharp\BTVN\Buoi2\Bai3\
+build_property.RootNamespace = EventDemo
+build_property.ProjectDir = e:\CSharp\Buoi8\EventDemo\
 =======
 is_global = true
 build_property.TargetFramework = net5.0
@@ -18,6 +18,6 @@ build_property.ProjectTypeGuids =
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = Bai3
-build_property.ProjectDir = e:\CSharp\BTVN\Buoi2\Bai3\
->>>>>>> e743b3241e9ecdd20c30d8084263e3ddee2e4973
+build_property.RootNamespace = EventDemo
+build_property.ProjectDir = e:\CSharp\Buoi8\EventDemo\
+>>>>>>> e743b3241e9ecdd20c30d8084263e3ddee2e4973:EventDemo/obj/Debug/net5.0/EventDemo.GeneratedMSBuildEditorConfig.editorconfig

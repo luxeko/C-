@@ -83,6 +83,7 @@ namespace Buoi8
         static void Main_Delegate()
         {
             int num = 10;
+            System.Console.WriteLine(num);
             ArrayList ar = new ArrayList();
             ar.Add(1);
             Calculator calObj = new Calculator();

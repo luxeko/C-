@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\caube\\.nuget\\packages\\": {}
+    "C:\\Users\\Duc Anh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CSharp\\BTVN\\Buoi4\\Bai1\\Bai1.csproj",
-      "projectName": "Bai1",
-      "projectPath": "E:\\CSharp\\BTVN\\Buoi4\\Bai1\\Bai1.csproj",
-      "packagesPath": "C:\\Users\\caube\\.nuget\\packages\\",
-      "outputPath": "E:\\CSharp\\BTVN\\Buoi4\\Bai1\\obj\\",
+      "projectUniqueName": "E:\\CSharp\\Buoi8\\EventDemo\\EventDemo.csproj",
+      "projectName": "EventDemo",
+      "projectPath": "E:\\CSharp\\Buoi8\\EventDemo\\EventDemo.csproj",
+      "packagesPath": "C:\\Users\\Duc Anh\\.nuget\\packages\\",
+      "outputPath": "E:\\CSharp\\Buoi8\\EventDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\caube\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Duc Anh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
